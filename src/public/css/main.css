@@ -4,7 +4,9 @@ body {
   /* background-repeat: no-repeat; */
 }
 
-
+.logo {
+  width: 30%;
+}
 .btn-grad-save {background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA  51%, #77A1D3  100%)}
 .btn-grad-save {
    /* margin: 10px; */
