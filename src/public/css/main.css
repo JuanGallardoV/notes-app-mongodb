@@ -1,0 +1,7 @@
+body {
+    /** Arreglar Fondo */
+    background: linear-gradient(to top, #5D26C1, #a17fe0, #59C173);
+    height: 100vh;
+    /* position: relative;
+    overflow: hidden; */
+}
