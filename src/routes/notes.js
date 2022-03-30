@@ -24,6 +24,7 @@ router.post('/notes/newNote', isAuthenticated, async (req,res) => {
         })
     } else {
         const newNote = new Note({title, description})
+        newNote.user = req.user.id
         await newNote.save()
         req.flash('success_msg', 'Nota Agregada Correctamente')
         res.redirect('/notes')
@@ -32,7 +33,7 @@ router.post('/notes/newNote', isAuthenticated, async (req,res) => {
 
 router.get('/notes', isAuthenticated, async (req, res) => {
     //! Sin el lean falla, ya que lo que hace el lean es transformar el documento de Mongo a un documento plano, y asi poder leerlo 
-    const notes = await Note.find().lean().sort({date: 'desc'})
+    const notes = await Note.find({user: req.user.id}).lean().sort({date: 'desc'})
     res.render('notes/listNotes', { notes })
 })
 
