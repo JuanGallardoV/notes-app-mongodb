@@ -11,10 +11,10 @@ router.post('/notes/newNote', isAuthenticated, async (req,res) => {
     const { title, description } = req.body
     const errors = []
     if(!title) {
-        errors.push({text: 'El titulo no puede estar vacio'})
+        errors.push({text: 'El título no puede estar vacio'})
     }
     if(!description) {
-        errors.push({text: 'La descripcion no puede estar vacia'})
+        errors.push({text: 'La descripción no puede estar vacia'})
     }
     if(errors.length > 0) {
         res.render('notes/addNote', {
